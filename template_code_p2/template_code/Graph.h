@@ -1,12 +1,18 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
+#include "Vertex.h"
+#include "Edge.h"
+
 class Graph {
     private:
         int numVertices;
+        int numEdges;
+        Vertex* vertices;
+        Edge* edges;
         int** adjMatrix;
     public:
-        Graph(int);
+        Graph(int, int);
         ~Graph();
         void addEdge(int, int, int);
         void removeEdge(int, int);
@@ -14,7 +20,7 @@ class Graph {
         int getWeight(int, int);
         void printAdjMatrix();
         void printOddDegree();
-        void printDijkstra(int);
+        void printDijkstra();
 };
 
 #endif
