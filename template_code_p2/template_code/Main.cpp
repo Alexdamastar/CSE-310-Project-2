@@ -16,7 +16,7 @@ int main(){
     }
     else{
         std::cout<<"Input not found!"<<std::endl;
-        return NULL;
+        return -1;
     }
 
     Graph graph = Graph(numOfVertices, numOfEdges);
@@ -29,8 +29,13 @@ int main(){
         std::cin >> startVertice;
         std::cin >> endVertice;
         std::cin >> weight;
+
+        
         Edge* newEdge = new Edge(startVertice, endVertice);
         newEdge->setWeight(weight);
+
+        
+
         // Here is where you load up the Graph object
     }
 

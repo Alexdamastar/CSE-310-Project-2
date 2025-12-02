@@ -11,6 +11,8 @@ class Edge{
         Edge(int, int);
         int getWeight();
         void setWeight(int);
+        int getStartVert(){ return this->startVert; };
+        int getEndVert(){ return this->endVert; };
 };
 
 
