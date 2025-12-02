@@ -19,6 +19,8 @@ int main(){
         return NULL;
     }
 
+    Graph graph = Graph(numOfVertices, numOfEdges);
+
 
     while(!std::cin.eof()){
         int startVertice;

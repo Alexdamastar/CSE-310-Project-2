@@ -14,10 +14,8 @@ class Graph {
     public:
         Graph(int, int);
         ~Graph();
-        void addEdge(int, int, int);
-        void removeEdge(int, int);
-        bool isEdge(int, int);
-        int getWeight(int, int);
+        void addEdge(Edge*);
+        void addVertex(Vertex*);
         void printAdjMatrix();
         void printOddDegree();
         void printDijkstra();
