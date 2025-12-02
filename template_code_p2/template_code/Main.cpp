@@ -1,4 +1,6 @@
 #include "Edge.h"
+#include "Graph.h"
+#include "Vertex.h"
 #include <iostream>
 
 int main(){
@@ -16,6 +18,9 @@ int main(){
         std::cout<<"Input not found!"<<std::endl;
         return NULL;
     }
+
+    Graph graph = Graph(numOfVertices, numOfEdges);
+
 
     while(!std::cin.eof()){
         int startVertice;
