@@ -67,5 +67,13 @@ void Graph::printOddDegree(){
 }
 
 void Graph::printDijkstra(){
+    for(int i = 0; i < this->numVertices; i++){
+        if(this->vertices[i].getDegree() % 2 != 0){
+            printDijkstra(i);
+        }
+    }
+}
+
+void Graph::printDijkstra(int vertex){
     
 }

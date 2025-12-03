@@ -17,6 +17,7 @@ class Graph {
         void printAdjMatrix();
         void printOddDegree();
         void printDijkstra();
+        void printDijkstra(int);
 };
 
 #endif
