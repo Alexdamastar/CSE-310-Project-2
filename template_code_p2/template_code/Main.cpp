@@ -29,14 +29,11 @@ int main(){
         std::cin >> startVertice;
         std::cin >> endVertice;
         std::cin >> weight;
-
         
         Edge* newEdge = new Edge(startVertice, endVertice);
         newEdge->setWeight(weight);
 
-        
-
-        // Here is where you load up the Graph object
+        graph.addEdge(newEdge);
     }
 
     // And here is where you start working on the three tasks
