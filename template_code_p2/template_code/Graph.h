@@ -9,13 +9,11 @@ class Graph {
         int numVertices;
         int numEdges;
         Vertex* vertices;
-        Edge* edges;
         int** adjMatrix;
     public:
         Graph(int, int);
         ~Graph();
         void addEdge(Edge*);
-        void addVertex(Vertex*);
         void printAdjMatrix();
         void printOddDegree();
         void printDijkstra();
