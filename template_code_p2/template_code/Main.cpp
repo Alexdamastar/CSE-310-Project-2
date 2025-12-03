@@ -37,6 +37,8 @@ int main(){
     }
 
     graph.printAdjMatrix();
+    graph.printOddDegree();
+    graph.printDijkstra();
 
     return 0;
 }
