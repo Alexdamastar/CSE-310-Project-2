@@ -43,7 +43,13 @@ Graph::addEdge(Edge* edge){
 }
 
 Graph::printAdjMatrix(){
-
+    std::cout << "The adjacency matrix of G is: " << std::endl;
+    for(int i = 0; i < this->numVertices; i++){
+        for(int j = 0; j < this->numVertices; j++){
+            std::cout << this->adjMatrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
 }
 
 Graph::printOddDegree(){
