@@ -50,10 +50,20 @@ void Graph::printAdjMatrix(){
         }
         std::cout << std::endl;
     }
+    std::cout << std::endl;
 }
 
 void Graph::printOddDegree(){
+    std::cout << "The nodes with odd degrees in G are: " << std::endl;
 
+    std::cout << "O = { "
+    for(int i = 0; i < this->numVertices; i++){
+        if(this->vertices[i].getDegree() % 2 != 0){
+            std::cout << this->vertices[i].getIndex() << " ";
+        }
+    }
+    
+    std::cout << "}" << std::endl;
 }
 
 void Graph::printDijkstra(){
