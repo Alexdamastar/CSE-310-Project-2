@@ -1,4 +1,5 @@
 #include "Graph.h"
+#include <iostream>
 
 Graph::Graph(int numVertices, int numEdges){
     this->numVertices = numVertices;
@@ -6,7 +7,10 @@ Graph::Graph(int numVertices, int numEdges){
 
     this->vertices = new Vertex[numVertices];
 
-    this->adjMatrix = new int[numVertices][numVertices];
+    this->adjMatrix = new int*[numVertices];
+    for(int i = 0; i < numVertices; i++){
+        this->adjMatrix[i] = new int[numVertices];
+    }
 
     for (int i = 0; i < numVertices; i++){
         Vertex v = Vertex();
@@ -17,10 +21,6 @@ Graph::Graph(int numVertices, int numEdges){
 }
 
 Graph::~Graph(){
-    for(int i = 0; i < this->numVertices; i++){
-        delete this->vertices[i];
-    }
-    
     delete[] this->vertices;
 
     for(int i = 0; i < this->numVertices; i++){
@@ -30,7 +30,7 @@ Graph::~Graph(){
     delete[] this->adjMatrix;
 }
 
-Graph::addEdge(Edge* edge){
+void Graph::addEdge(Edge* edge){
     int start = edge->getStartVert();
     int end = edge->getEndVert();
     int weight = edge->getWeight();
@@ -42,7 +42,7 @@ Graph::addEdge(Edge* edge){
     this->adjMatrix[end][start] = weight;
 }
 
-Graph::printAdjMatrix(){
+void Graph::printAdjMatrix(){
     std::cout << "The adjacency matrix of G is: " << std::endl;
     for(int i = 0; i < this->numVertices; i++){
         for(int j = 0; j < this->numVertices; j++){
@@ -52,10 +52,10 @@ Graph::printAdjMatrix(){
     }
 }
 
-Graph::printOddDegree(){
+void Graph::printOddDegree(){
 
 }
 
-Graph::printDijkstra(){
+void Graph::printDijkstra(){
     
 }
