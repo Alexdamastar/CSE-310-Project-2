@@ -1,4 +1,4 @@
-include "Graph.h"
+#include "Graph.h"
 
 Graph::Graph(int numVertices, int numEdges){
     this->numVertices = numVertices;
