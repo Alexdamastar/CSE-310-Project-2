@@ -36,7 +36,7 @@ int main(){
         graph.addEdge(newEdge);
     }
 
-    // And here is where you start working on the three tasks
+    graph.printAdjMatrix();
 
     return 0;
 }
