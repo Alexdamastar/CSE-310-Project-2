@@ -61,6 +61,7 @@ void Graph::printOddDegree(){
 
     for(int i = 1; i <= this->numVertices; i++){
         int degree = this->vertices[i].getDegree();
+        std::cout << this->vertices[i].getIndex() << " " << "DEGREE: " << degree;
         if(degree % 2 == 1){
             std::cout << this->vertices[i].getIndex() << " ";
         }
