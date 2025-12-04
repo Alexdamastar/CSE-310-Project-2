@@ -79,21 +79,21 @@ void Graph::printDijkstra(){
 void Graph::printDijkstra(int vertex){
     const int INF = 1000000000;
 
-    int n = this->numVertices;
-    int* dist = new int[n + 1];
-    bool* visited = new bool[n + 1];
+    int numVertices = this->numVertices;
+    int* dist = new int[numVertices + 1];
+    bool* visited = new bool[numVertices + 1];
 
-    for(int i = 1; i <= n; i++){
+    for(int i = 1; i <= numVertices; i++){
         dist[i] = INF;
         visited[i] = false;
     }
 
     dist[vertex] = 0;
 
-    for(int iter = 1; iter <= n; iter++){
+    for(int iter = 1; iter <= numVertices; iter++){
         int u = -1;
         int best = INF;
-        for(int i = 1; i <= n; i++){
+        for(int i = 1; i <= numVertices; i++){
             if(!visited[i] && dist[i] < best){
                 best = dist[i];
                 u = i;
@@ -103,7 +103,7 @@ void Graph::printDijkstra(int vertex){
         if(u == -1) break;
         visited[u] = true;
 
-        for(int v = 1; v <= n; v++){
+        for(int v = 1; v <= numVertices; v++){
             if(visited[v]) continue;
             int w = this->adjMatrix[u][v];
             if(w <= 0) continue;
@@ -116,7 +116,7 @@ void Graph::printDijkstra(int vertex){
     std::cout << std::endl;
     std::cout << "The shortest path lengths from Node " << vertex << " to all other nodes are: " << std::endl;
 
-    for(int i = 1; i <= n; i++){
+    for(int i = 1; i <= numVertices; i++){
         if(dist[i] >= INF) std::cout << "  " << i << ": INF" << std::endl;
         else std::cout << "  " << i << ": " << dist[i] << std::endl;
     }
