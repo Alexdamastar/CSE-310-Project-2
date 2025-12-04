@@ -60,7 +60,8 @@ void Graph::printOddDegree(){
     std::cout << "O = { ";
 
     for(int i = 1; i <= this->numVertices; i++){
-        if(this->vertices[i].getDegree() % 2 != 0){
+        int degree = this->vertices[i].getDegree();
+        if(degree % 2 == 1){
             std::cout << this->vertices[i].getIndex() << " ";
         }
     }
@@ -70,7 +71,8 @@ void Graph::printOddDegree(){
 
 void Graph::printDijkstra(){
     for(int i = 1; i <= this->numVertices; i++){
-        if(this->vertices[i].getDegree() % 2 != 0){
+        int degree = this->vertices[i].getDegree();
+        if(degree % 2 == 1){
             printDijkstra(i);
         }
     }
