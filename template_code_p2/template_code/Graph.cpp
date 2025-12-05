@@ -37,8 +37,10 @@ void Graph::addEdge(Edge* edge){
     int end = edge->getEndVert();
     int weight = edge->getWeight();
 
-    this->vertices[start].setDegree(this->vertices[start].getDegree() + 1);
-    this->vertices[end].setDegree(this->vertices[end].getDegree() + 1);
+    if(this->adjMatrix[start][end] == 0){
+        this->vertices[start].setDegree(this->vertices[start].getDegree() + 1);
+        this->vertices[end].setDegree(this->vertices[end].getDegree() + 1);
+    }
 
     this->adjMatrix[start][end] = weight;
     this->adjMatrix[end][start] = weight;
@@ -61,7 +63,6 @@ void Graph::printOddDegree(){
 
     for(int i = 1; i <= this->numVertices; i++){
         int degree = this->vertices[i].getDegree();
-        std::cout << this->vertices[i].getIndex() << " " << "DEGREE: " << degree;
         if(degree % 2 == 1){
             std::cout << this->vertices[i].getIndex() << " ";
         }
